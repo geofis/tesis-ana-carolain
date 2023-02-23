@@ -1,6 +1,6 @@
 ---
 title: "Análisis de granulometría de sedimentos de playa Palenque"
-author: "Ana Valera, Carolain Pérez, José Martínez (tali)"
+author: "Ana Valera, Carolain Pérez, Yulisa Arias, José Martínez (tali)"
 date: '2023-02-16'
 output: pdf_document
 editor_options: 
