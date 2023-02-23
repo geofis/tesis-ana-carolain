@@ -99,3 +99,8 @@ lapply(
   grep('AVA[0-9]{3,}$', colnames(pesos_tamanos_mm_phi_rel_acum_unido), value = T),
   function(x) crear_grafico(x, phi=F))
 ```
+
+
+## Mapa
+
+![Mapa de muestras de arena](mapa-de-muestras-de-arena.jpg)
