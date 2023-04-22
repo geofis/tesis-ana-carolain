@@ -752,23 +752,7 @@ distances_med %>%
   facet_wrap(~transect, ncol = 2)
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Tramo Nizao este
-
-
-NOTA: TENEMOS UN PROBLEMA CON EL EMPLAZAMIENTO DE TRANSECTOS. EL ALGORITMO NO COLOCA TRANSECTOS EN EL ÁREA CENTRAL. AQUÍ NOS QUEDAMOS.
 
 - Cargar líneas de costa
 
@@ -900,21 +884,147 @@ distances_med %>%
   facet_wrap(~transect, ncol = 3)
 ```
 
+### Tramo Nizao oeste
 
+- Cargar líneas de costa
 
+```{r}
+lineas <- st_read('lineas-de-costa/PalenqueNizaoPC_L8_output_lines.gpkg') %>%
+  filter(grepl('nizao oeste', tramo, ignore.case = T)) %>%
+  st_cast('LINESTRING')
+# QUITANDO COSTAS QUE SE CORTAN DOS VECES EN LOS TRANSECTOS,
+# LO CUAL SE COMPROBÓ EN LOS TESTS (MÁS ADELANTE)
+lineas <- lineas %>%
+  mutate(foo = as.character(as.Date(date, '%Y%m%d'))) %>%
+  filter(!foo %in% c("2015-10-28", "2021-11-29")) %>%
+  select(-foo)
+st_geometry(lineas) <- "geometry"
+lineas$longitud <- units::drop_units(st_length(lineas))
+lineas <- lineas[lineas$longitud > 0, ]
+```
 
+- Representar las líneas de costa
 
+```{r}
+lineas$intervalo_en_dias <- round(as.numeric(interval(lineas$date, max(lineas$date)), 'days'), 0)
+escala_color <- 'BrBG'
+mapa_lineas <- lineas %>% ggplot + aes(color=intervalo_en_dias) + geom_sf() +
+  theme_minimal() +
+  theme(text = element_text(size = 18)) +
+  scale_color_gradientn(colors = rev(RColorBrewer::brewer.pal(11, escala_color)))
+mapa_lineas
+```
 
-## Pos-2015 (Sentinel 2)
-
+- Crear transectos respecto de línea de costa de referencia y representarlos
 
 
 ```{r}
+# Umbral de longitud para líneas que podrían usarse como referencia
+umbral_longitud <- 200
 
+# Elegir una línea de referencia
+linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == "2013-08-03 15:04:35 AST")
+
+# Crear transectos
+transectos <- create_transect(x = linea_ref, 50, reverse = T) %>% rename(transect=coastr_id)
+
+# Mapa
+mapa_lineas + geom_sf(data = transectos, color = 'blue')
 ```
 
+- Clasificar las distintas partes del transecto en tierra o mar
 
+```{r}
+transectos_clasif <- transclas(tr = transectos, rl = linea_ref)
+cols <- colorRampPalette(brewer.pal(9,'Set1'))(nrow(lineas))
+ggplot() +
+  geom_sf(data = lineas %>% mutate(date = factor(date)), color = cols) +
+  geom_sf(
+    data = linea_ref %>% mutate(linetype = paste0('Ref. (', date, ')')),
+    aes(color=linetype), linewidth = 2, show.legend = 'line') +
+  geom_sf(
+    data = transectos_clasif %>% mutate(sealand=paste0('Transect: ', sealand)),
+    aes(color = sealand), show.legend = 'line', linewidth = 4) +
+  scale_color_manual(values = c('black', 'orange', 'blue')) +
+  geom_sf_text(
+    data = transectos_clasif %>% filter(sealand=='landward') %>%
+      st_centroid, aes(label = transect), size = 8) +
+  theme_minimal() +
+  theme(legend.title = element_blank(), text = element_text(size = 18))
+```
 
+- Calcular distancias de cada línea de costa respecto de la línea de referencia
+
+```{r}
+distl <- pointdist(sh = lineas, re = linea_ref, tr = transectos_clasif, rtr = transectos)
+```
+
+- Generar las series temporales de distancia de la línea de costa respecto a la de referencia
+
+```{r}
+interdist <- map(distl, interpolate) %>% plyr::ldply() %>% mutate(date = as.Date(date, "%Y-%m-%d"))
+distances <- plyr::ldply(distl) %>% mutate(date = as.Date(date, "%Y-%m-%d"))
+distances %>% 
+  ggplot() + theme_bw() + aes(x = date, y = distance_sign) +
+  geom_ribbon(data = interdist, aes(ymax = pmax(distance_sign, 0), ymin = 0), fill = "sienna3") +
+  geom_ribbon(data = interdist, aes(ymin = pmin(distance_sign, 0), ymax = 0), fill = "skyblue3") +
+  geom_hline(yintercept = 0, color = 'grey') +
+  geom_line(colour='black', lwd = 0.5) +
+  scale_x_date(date_labels = "%Y", date_breaks = '1 year') +
+#   scale_y_continuous(limits = c(-30, 30)) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), text = element_text(size = 14)) +
+  facet_wrap(~transect, ncol = 2)
+```
+
+- Revisión de seguridad: determinar si hay transectos que corten dos veces una misma línea de costa
+
+```{r}
+test <- sapply(unique(distances$transect), function(x) {
+    conteo_cortes <- table(distances[distances$transect==x, 'date', drop=T])
+    mas_de_1 <- length(which(conteo_cortes>1))>0
+    ifelse(mas_de_1,
+          paste('El transecto', x, 'corta', conteo_cortes[which(conteo_cortes>1)],
+                 'veces la línea de costa de fecha', names(conteo_cortes[which(conteo_cortes>1)])),
+          paste('El transecto', x, 'pasa la prueba'))
+})
+test
+```
+
+- Suavizado de la serie con media móvil
+
+```{r}
+ventana_de_promediado <- 3 #Número de observaciones para obtener la media movil (ventana de promediado)
+distl_med <- sapply(unique(distances$transect),
+       function(x){
+           df <- distances[distances$transect==x, ]
+           df <- df[order(df$date), ]
+           x <- zoo(df$distance_sign, df$date)
+           mm <- as.numeric(rollmean(x, ventana_de_promediado, fill = NA))
+           df$distance_sign <- mm
+           df <- df #%>% slice(1:(n()-1))
+           return(df)
+       }, simplify=F)
+interdist_med <- map(distl_med, interpolate) %>% plyr::ldply() %>% mutate(date = as.Date(date, "%Y-%m-%d"))
+distances_med <- plyr::ldply(distl_med) %>% mutate(date = as.Date(date, "%Y-%m-%d"))
+```
+
+- Representación de la serie suavizada
+
+```{r}
+distances_med %>% 
+  ggplot() + theme_bw() + aes(x = date, y = distance_sign) +
+  geom_ribbon(data = interdist_med, aes(ymax = pmax(distance_sign, 0), ymin = 0), fill = "sienna3") +
+  geom_ribbon(data = interdist_med, aes(ymin = pmin(distance_sign, 0), ymax = 0), fill = "skyblue3") +
+  geom_hline(yintercept = 0, color = 'grey') +
+  geom_line(colour='black', lwd = 0.5) +
+  scale_x_date(date_labels = "%Y", date_breaks = '1 year') +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5), text = element_text(size = 14)) +
+  facet_wrap(~transect, ncol = 3)
+```
+
+## Pos-2015 (Sentinel 2)
+
+COMO QUE NO HACE FALTA TALI, MEJOL DEJA ESO.
 
 ## Referencias
 
