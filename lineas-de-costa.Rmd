@@ -15,7 +15,7 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width = 11, fig.height = 8)
+knitr::opts_chunk$set(echo = TRUE, cache = F, fig.width = 11, fig.height = 8)
 ```
 
 # Representar líneas de costa, transectos, EPR
@@ -30,6 +30,15 @@ library(sf)
 library(lubridate)
 library(RColorBrewer)
 library(zoo)
+library(kableExtra)
+options(knitr.kable.NA = '')
+my_kable_style <- function(df, caption = '', full_width = T) {
+  df %>% kable(format = 'latex', escape = F, booktabs = T,
+               digits = 2, caption = caption) %>%
+    kable_styling(bootstrap_options = c("hover", "condensed"),
+                  latex_options = "HOLD_position",
+                  full_width = full_width, position = "center")
+}
 # Función para clasificar las partes de los transectos en mar o tierra respecto de referencia
 devtools::source_url('https://raw.githubusercontent.com/geofis/RCoastSat/master/R/classify-transects.R')
 # Función para calcular la distancia de cada línea de costa respecto de la de referencia sobre cada transecto
@@ -37,6 +46,72 @@ devtools::source_url('https://raw.githubusercontent.com/geofis/RCoastSat/master/
 # Función para suavizar el relleno de los gráficos de series temporales
 devtools::source_url('https://raw.githubusercontent.com/geofis/RCoastSat/master/R/interpolate.R')
 # La línea siguiente fija el tamaño de los gráficos a unas proporciones "razonables". Editar a conveniencia
+## Función para series temporales, tasas de erosión/acreción
+calcular_tasa_de_cambio <- function(distancias = distances, transecto,
+                                    metodo_descomposicion_loess = T, plot = F) {
+  # Paquetes
+  library(zoo)
+  library(lubridate)
+  # Datos
+  df_selec <- distancias[distancias$transect==transecto, c('date', 'distance_sign')]
+  todas_las_fechas <- data.frame(date = seq(min(df_selec$date), max(df_selec$date), by = "day"))
+  df_completo <- merge(todas_las_fechas, df_selec, all.x = T)
+  serie_regular <- zoo(df_completo$distance_sign, df_completo$date)
+  
+  # Rellenado de la serie usando medias móviles
+  serie_rellena <- na.approx(serie_regular, na.rm = F)
+  # Serie clase ts
+  serie_rellena_ts <- ts(data = as.vector(serie_rellena), frequency = 365.25,
+                         start = c(year(min(df_selec$date)), yday(min(df_selec$date))))
+  
+  if(metodo_descomposicion_loess) {
+    # Obtención de la tendencia por descomposición de la serie mediante LOESS, y obtención tasa de cambio  (-erosión, +acreción)
+    descomposicion <- stl(serie_rellena_ts, 'periodic', na.action = na.trim)
+    if(plot) plot(descomposicion)
+    tendencia_por_dia <- zoo(as.matrix(descomposicion$time.series[,'trend']), todas_las_fechas$date)
+    tendencia_por_mes <- aggregate(tendencia_por_dia, as.yearmon, tail, 1)
+    tasa_de_cambio_por_mes <- diff(tendencia_por_mes)
+    tasa_de_cambio_por_mes
+    tendencia_por_ano <- aggregate(tendencia_por_dia, function(x) year(floor(as.yearmon(x))), tail, 1)
+    tasa_de_cambio_por_ano <- diff(tendencia_por_ano)
+    tasa_de_cambio_por_ano
+    tasa_de_cambio_anual <- mean(tasa_de_cambio_por_ano, na.rm = T)
+    tasa_de_cambio_anual }
+  else {
+    # Obtención de la tendencia por descomposición de la serie mediante medias móviles, y obtención tasa de cambio  (-erosión, +acreción)
+    descomposicion <- decompose(serie_rellena_ts)
+    if(plot) plot(descomposicion)
+    tasa_de_cambio_por_dia <- diff(descomposicion$trend)
+    tendencia_por_dia <- zoo(descomposicion$trend, todas_las_fechas[-1, ])
+    tendencia_por_mes <- aggregate(tendencia_por_dia, as.yearmon, tail, 1)
+    tasa_de_cambio_por_mes <- diff(tendencia_por_mes)
+    tasa_de_cambio_por_mes
+    tendencia_por_ano <- aggregate(tendencia_por_dia, function(x) year(floor(as.yearmon(x))), tail, 1)
+    tasa_de_cambio_por_ano <- diff(tendencia_por_ano)
+    tasa_de_cambio_por_ano
+    tasa_de_cambio_anual <- mean(tasa_de_cambio_por_ano, na.rm = T)
+    tasa_de_cambio_anual
+  }
+  return(
+    list(
+      `Periodo y tasa de cambio anual` = data.frame(
+        `Periodo` = paste0(year(min(todas_las_fechas$date)),
+                          '-',
+                          year(max(todas_las_fechas$date)),
+                          ' (',
+                          year(max(todas_las_fechas$date)) - year(min(todas_las_fechas$date)),
+                          ' años)'), 
+                 `Tasa de cambio anual, en metros (-erosión,+acreción)` = tasa_de_cambio_anual,
+        check.names = F),
+      `Tasa de cambio por año, en metros (-erosión,+acreción)` = tasa_de_cambio_por_ano))
+}
+generar_tabla_de_tasas_de_cambio <- function(tasas_de_cambio, titulo) {
+  as.data.frame(t(sapply(tasas_de_cambio, function(x) x[[c(1)]]))) %>% 
+  rownames_to_column('Transecto') %>% 
+  my_kable_style(caption = titulo,
+               full_width = F) %>% 
+  column_spec(column = 3, width = "15em")
+}
 ```
 
 ## Pre-2009
@@ -139,6 +214,17 @@ test <- sapply(unique(distances$transect), function(x) {
           paste('El transecto', x, 'pasa la prueba'))
 })
 test
+```
+
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pre-2009 para transectos del Tramo Este')
 ```
 
 - Suavizado de la serie con media móvil
@@ -273,6 +359,17 @@ test <- sapply(unique(distances$transect), function(x) {
           paste('El transecto', x, 'pasa la prueba'))
 })
 test
+```
+
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pre-2009 para transectos del Tramo Oeste')
 ```
 
 - Suavizado de la serie con media móvil
@@ -456,6 +553,17 @@ test <- sapply(unique(distances$transect), function(x) {
 test
 ```
 
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Palenque Este')
+```
+
 - Suavizado de la serie con media móvil
 
 ```{r}
@@ -586,6 +694,17 @@ test <- sapply(unique(distances$transect), function(x) {
           paste('El transecto', x, 'pasa la prueba'))
 })
 test
+```
+
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Palenque Centro')
 ```
 
 - Suavizado de la serie con media móvil
@@ -720,6 +839,17 @@ test <- sapply(unique(distances$transect), function(x) {
 test
 ```
 
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Palenque Oeste')
+```
+
 - Suavizado de la serie con media móvil
 
 ```{r}
@@ -850,6 +980,17 @@ test <- sapply(unique(distances$transect), function(x) {
           paste('El transecto', x, 'pasa la prueba'))
 })
 test
+```
+
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Nizao Este')
 ```
 
 - Suavizado de la serie con media móvil
@@ -988,6 +1129,17 @@ test <- sapply(unique(distances$transect), function(x) {
           paste('El transecto', x, 'pasa la prueba'))
 })
 test
+```
+
+- Tasas de cambio (-erosión, +acreción)
+
+```{r}
+tasas_de_cambio <- lapply(
+  unique(distances$transect),
+  function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
+  setNames(paste('Transecto', unique(distances$transect)))
+tasas_de_cambio %>% 
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Nizao Oeste')
 ```
 
 - Suavizado de la serie con media móvil
