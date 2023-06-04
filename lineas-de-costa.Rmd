@@ -15,7 +15,7 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache = F, fig.width = 11, fig.height = 8)
+knitr::opts_chunk$set(echo = TRUE, cache = F, message = F, warning = F, fig.width = 11, fig.height = 8)
 ```
 
 # Representar líneas de costa, transectos, EPR
@@ -107,10 +107,22 @@ calcular_tasa_de_cambio <- function(distancias = distances, transecto,
 }
 generar_tabla_de_tasas_de_cambio <- function(tasas_de_cambio, titulo) {
   as.data.frame(t(sapply(tasas_de_cambio, function(x) x[[c(1)]]))) %>% 
-  rownames_to_column('Transecto') %>% 
+    mutate(across(starts_with('Tasa'), as.numeric)) %>% 
+    rownames_to_column('Transecto') %>% 
+    my_kable_style(caption = titulo,
+                   full_width = F) %>% 
+    column_spec(column = 3, width = "15em")
+}
+generar_tabla_de_tasas_de_cambio_por_ano <- function(tasas_de_cambio, titulo) {
+  sapply(names(tasas_de_cambio), function(x) {
+    data.frame(
+      foo = tasas_de_cambio[[x]][2]$`Tasa de cambio por año, en metros (-erosión,+acreción)`,
+      check.names = F) %>% 
+      rownames_to_column('Año') %>%
+      setNames(c('Año', x))
+  }, simplify = F) %>% plyr::join_all() %>% 
   my_kable_style(caption = titulo,
-               full_width = F) %>% 
-  column_spec(column = 3, width = "15em")
+               full_width = T)
 }
 ```
 
@@ -224,7 +236,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pre-2009 para transectos del Tramo Este')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pre-2009 para transectos del Tramo Este')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pre-2009 (en metros; -erosión, +acreción) para transectos del Tramo Este')
 ```
 
 - Suavizado de la serie con media móvil
@@ -369,7 +384,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pre-2009 para transectos del Tramo Oeste')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pre-2009 para transectos del Tramo Oeste')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pre-2009 (en metros; -erosión, +acreción) para transectos del Tramo Oeste')
 ```
 
 - Suavizado de la serie con media móvil
@@ -561,7 +579,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Palenque Este')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pos-2013 (L8) para transectos del Tramo Palenque Este')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pos-2013 (en metros; -erosión, +acreción) para transectos del Tramo Palenque Este')
 ```
 
 - Suavizado de la serie con media móvil
@@ -704,7 +725,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Palenque Centro')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pos-2013 (L8) para transectos del Tramo Palenque Centro')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pos-2013 (en metros; -erosión, +acreción) para transectos del Tramo Palenque Centro')
 ```
 
 - Suavizado de la serie con media móvil
@@ -847,7 +871,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Palenque Oeste')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pos-2013 (L8) para transectos del Tramo Palenque Oeste')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pos-2013 (en metros; -erosión, +acreción) para transectos del Tramo Palenque Oeste')
 ```
 
 - Suavizado de la serie con media móvil
@@ -990,7 +1017,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Nizao Este')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pos-2013 (L8) para transectos del Tramo Nizao Este')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pos-2013 (en metros; -erosión, +acreción) para transectos del Tramo Nizao Este')
 ```
 
 - Suavizado de la serie con media móvil
@@ -1139,7 +1169,10 @@ tasas_de_cambio <- lapply(
   function (x) calcular_tasa_de_cambio(transecto = x)) %>% 
   setNames(paste('Transecto', unique(distances$transect)))
 tasas_de_cambio %>% 
-  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio pos-2013 (L8) para transectos del Tramo Nizao Oeste')
+  generar_tabla_de_tasas_de_cambio(titulo = 'Tasa de cambio anual promediada pos-2013 (L8) para transectos del Tramo Nizao Oeste')
+tasas_de_cambio %>%
+  generar_tabla_de_tasas_de_cambio_por_ano(
+    titulo = 'Tasa de cambio por año pos-2013 (en metros; -erosión, +acreción) para transectos del Tramo Nizao Oeste')
 ```
 
 - Suavizado de la serie con media móvil
