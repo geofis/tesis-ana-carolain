@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.7)  7 JUN 2023 21:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.8.7)  20 JUN 2023 21:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,16 +688,17 @@ pe pdf)
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-3-1.p
 df  used on input line 310.
 (pdftex.def)             Requested size: 650.44559pt x 219.05328pt.
-<lineas-de-costa_files/figure-latex/unnamed-chunk-4-1.pdf, id=41, 777.90625pt x
+[5 <./lineas-de-costa_files/figure-latex/unnamed-chunk-3-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-4-1.pdf, id=54, 777.90625pt x
  302.12875pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (ty
 pe pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-4-1.p
-df  used on input line 335.
+df  used on input line 346.
 (pdftex.def)             Requested size: 650.44559pt x 252.62466pt.
-[5 <./lineas-de-costa_files/figure-latex/unnamed-chunk-3-1.pdf>]
-Overfull \vbox (2.03638pt too high) detected at line 362
+
+Underfull \vbox (badness 2057) detected at line 373
  []
 
 [6 <./lineas-de-costa_files/figure-latex/unnamed-chunk-4-1.pdf>]
@@ -707,521 +708,525 @@ File: lineas-de-costa_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (ty
 pe pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-5-1.p
-df  used on input line 364.
+df  used on input line 375.
 (pdftex.def)             Requested size: 650.43442pt x 234.22377pt.
-<lineas-de-costa_files/figure-latex/unnamed-chunk-7-1.pdf, id=69, 784.9325pt x 
+
+Overfull \vbox (0.96895pt too high) detected at line 412
+ []
+
+[7 <./lineas-de-costa_files/figure-latex/unnamed-chunk-5-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-7-1.pdf, id=82, 784.9325pt x 
 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (ty
 pe pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-7-1.p
-df  used on input line 403.
+df  used on input line 414.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[7 <./lineas-de-costa_files/figure-latex/unnamed-chunk-5-1.pdf>] [8 <./lineas-d
-e-costa_files/figure-latex/unnamed-chunk-7-1.pdf>]
+[8] [9 <./lineas-de-costa_files/figure-latex/unnamed-chunk-7-1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 456.
+(Font)              <10> on input line 467.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 456.
+(Font)              <7> on input line 467.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 456.
-[9]
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+(Font)              <5> on input line 467.
+[10]
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 528--528
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
-[10] [11]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.pdf, id=108, 784.9325pt 
+[11] [12]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.pdf, id=112, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.
-pdf  used on input line 577.
+pdf  used on input line 588.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[12] [13 <./lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.pdf, id=126, 777.90625pt
+[13] [14 <./lineas-de-costa_files/figure-latex/unnamed-chunk-12-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.pdf, id=130, 777.90625pt
  x 169.63374pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.
-pdf  used on input line 638.
+pdf  used on input line 649.
 (pdftex.def)             Requested size: 650.44559pt x 141.83908pt.
-[14]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.pdf, id=132, 777.90625pt
+[15]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.pdf, id=136, 777.90625pt
  x 253.94875pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.
-pdf  used on input line 663.
+pdf  used on input line 685.
 (pdftex.def)             Requested size: 650.44559pt x 212.339pt.
-[15 <./lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.pdf, id=146, 774.895pt x
+[16 <./lineas-de-costa_files/figure-latex/unnamed-chunk-14-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.pdf, id=150, 774.895pt x
  238.8925pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.
-pdf  used on input line 692.
+pdf  used on input line 714.
 (pdftex.def)             Requested size: 650.43442pt x 200.5225pt.
-[16 <./lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-18-1.pdf, id=161, 784.9325pt 
+[17 <./lineas-de-costa_files/figure-latex/unnamed-chunk-15-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-18-1.pdf, id=165, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-18-1.
-pdf  used on input line 731.
+pdf  used on input line 753.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[17 <./lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.pdf>] [18 <./linea
-s-de-costa_files/figure-latex/unnamed-chunk-18-1.pdf>] [19]
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+[18 <./lineas-de-costa_files/figure-latex/unnamed-chunk-16-1.pdf>] [19 <./linea
+s-de-costa_files/figure-latex/unnamed-chunk-18-1.pdf>] [20]
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (3.32191pt too wide) in paragraph at lines 845--845
+Overfull \hbox (3.32191pt too wide) in paragraph at lines 867--867
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
-[20] [21]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.pdf, id=200, 784.9325pt 
+[21] [22]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.pdf, id=204, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.
-pdf  used on input line 905.
+pdf  used on input line 927.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[22] [23 <./lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.pdf>]
-Underfull \vbox (badness 10000) detected at line 958
+[23] [24 <./lineas-de-costa_files/figure-latex/unnamed-chunk-23-1.pdf>]
+Underfull \vbox (badness 10000) detected at line 980
  []
 
-[24]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.pdf, id=221, 637.38126pt
+[25]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.pdf, id=226, 637.38126pt
  x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.
-pdf  used on input line 1017.
+pdf  used on input line 1039.
 (pdftex.def)             Requested size: 529.84326pt x 469.76654pt.
-[25] [26 <./lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.pdf, id=244, 674.52pt x 
+[26] [27 <./lineas-de-costa_files/figure-latex/unnamed-chunk-26-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.pdf, id=248, 674.52pt x 
 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.
-pdf  used on input line 1042.
+pdf  used on input line 1075.
 (pdftex.def)             Requested size: 560.71602pt x 469.76654pt.
-[27] [28 <./lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.pdf, id=262, 735.74875pt
+[28] [29 <./lineas-de-costa_files/figure-latex/unnamed-chunk-27-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.pdf, id=266, 735.74875pt
  x 564.1075pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.
-pdf  used on input line 1071.
+pdf  used on input line 1104.
 (pdftex.def)             Requested size: 612.6921pt x 469.75845pt.
-[29] [30 <./lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.pdf, id=279, 784.9325pt 
+[30] [31 <./lineas-de-costa_files/figure-latex/unnamed-chunk-28-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.pdf, id=284, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.
-pdf  used on input line 1110.
+pdf  used on input line 1143.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[31] [32 <./lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.pdf>] [33] [3
-4]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.pdf, id=307, 784.9325pt 
+[32] [33 <./lineas-de-costa_files/figure-latex/unnamed-chunk-30-1.pdf>] [34] [3
+5]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.pdf, id=311, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.
-pdf  used on input line 1263.
+pdf  used on input line 1296.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[35] [36 <./lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.pdf, id=324, 777.90625pt
+[36] [37 <./lineas-de-costa_files/figure-latex/unnamed-chunk-35-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.pdf, id=329, 777.90625pt
  x 443.6575pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.
-pdf  used on input line 1319.
+pdf  used on input line 1352.
 (pdftex.def)             Requested size: 650.44559pt x 370.96379pt.
-[37] [38 <./lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.pdf, id=344, 777.90625pt
+[38] [39 <./lineas-de-costa_files/figure-latex/unnamed-chunk-37-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.pdf, id=348, 777.90625pt
  x 470.75874pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.
-pdf  used on input line 1344.
+pdf  used on input line 1388.
 (pdftex.def)             Requested size: 650.44559pt x 393.62448pt.
-[39 <./lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.pdf, id=358, 774.895pt x
+[40] [41 <./lineas-de-costa_files/figure-latex/unnamed-chunk-38-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.pdf, id=366, 774.895pt x
  424.58624pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.
-pdf  used on input line 1373.
+pdf  used on input line 1417.
 (pdftex.def)             Requested size: 650.43442pt x 356.39087pt.
-[40]
-Overfull \vbox (0.96931pt too high) detected at line 1410
+[42]
+Overfull \vbox (0.96931pt too high) detected at line 1454
  []
 
-[41 <./lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.pdf, id=375, 784.9325pt 
+[43 <./lineas-de-costa_files/figure-latex/unnamed-chunk-39-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.pdf, id=384, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.
-pdf  used on input line 1412.
+pdf  used on input line 1456.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[42] [43 <./lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.pdf>] [44] [4
-5]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.pdf, id=402, 784.9325pt 
+[44] [45 <./lineas-de-costa_files/figure-latex/unnamed-chunk-41-1.pdf>] [46] [4
+7]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.pdf, id=410, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.
-pdf  used on input line 1563.
+pdf  used on input line 1607.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[46] [47 <./lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.pdf, id=419, 777.90625pt
+[48] [49 <./lineas-de-costa_files/figure-latex/unnamed-chunk-46-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.pdf, id=428, 777.90625pt
  x 195.73125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.
-pdf  used on input line 1619.
+pdf  used on input line 1663.
 (pdftex.def)             Requested size: 650.44559pt x 163.66049pt.
-[48]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-49-1.pdf, id=425, 777.90625pt
+[50]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-49-1.pdf, id=434, 777.90625pt
  x 356.33125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-49-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-49-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-49-1.
-pdf  used on input line 1644.
+pdf  used on input line 1699.
 (pdftex.def)             Requested size: 650.44559pt x 297.94603pt.
-[49 <./lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.pdf>] [50 <./linea
+[51 <./lineas-de-costa_files/figure-latex/unnamed-chunk-48-1.pdf>] [52 <./linea
 s-de-costa_files/figure-latex/unnamed-chunk-49-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.pdf, id=454, 774.895pt x
+<lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.pdf, id=462, 774.895pt x
  325.215pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.
-pdf  used on input line 1673.
+pdf  used on input line 1728.
 (pdftex.def)             Requested size: 650.43442pt x 272.98024pt.
-[51 <./lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.pdf, id=467, 784.9325pt 
+[53 <./lineas-de-costa_files/figure-latex/unnamed-chunk-50-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.pdf, id=475, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.
-pdf  used on input line 1712.
+pdf  used on input line 1767.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[52] [53 <./lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.pdf>] [54] [5
-5]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.pdf, id=494, 784.9325pt 
+[54] [55 <./lineas-de-costa_files/figure-latex/unnamed-chunk-52-1.pdf>] [56] [5
+7]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.pdf, id=502, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.
-pdf  used on input line 1863.
+pdf  used on input line 1918.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[56] [57 <./lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.pdf, id=511, 777.90625pt
+[58] [59 <./lineas-de-costa_files/figure-latex/unnamed-chunk-57-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.pdf, id=519, 777.90625pt
  x 161.60374pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.
-pdf  used on input line 1919.
+pdf  used on input line 1974.
 (pdftex.def)             Requested size: 650.44559pt x 135.12482pt.
-[58]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.pdf, id=517, 777.90625pt
+[60]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.pdf, id=525, 777.90625pt
  x 223.83624pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.
-pdf  used on input line 1944.
+pdf  used on input line 2010.
 (pdftex.def)             Requested size: 650.44559pt x 187.16046pt.
-[59 <./lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.pdf, id=531, 774.895pt x
+[61 <./lineas-de-costa_files/figure-latex/unnamed-chunk-59-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.pdf, id=540, 774.895pt x
  212.795pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.
-pdf  used on input line 1973.
+pdf  used on input line 2039.
 (pdftex.def)             Requested size: 650.43442pt x 178.61668pt.
-[60 <./lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-63-1.pdf, id=545, 784.9325pt 
+[62 <./lineas-de-costa_files/figure-latex/unnamed-chunk-60-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-63-1.pdf, id=554, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-63-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-63-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-63-1.
-pdf  used on input line 2012.
+pdf  used on input line 2078.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[61 <./lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.pdf>] [62 <./linea
-s-de-costa_files/figure-latex/unnamed-chunk-63-1.pdf>] [63]
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+[63 <./lineas-de-costa_files/figure-latex/unnamed-chunk-61-1.pdf>] [64 <./linea
+s-de-costa_files/figure-latex/unnamed-chunk-63-1.pdf>] [65]
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
 
-Overfull \hbox (6.8957pt too wide) in paragraph at lines 2115--2115
+Overfull \hbox (6.8957pt too wide) in paragraph at lines 2181--2181
  []\T1/lmr/m/n/10 (-20) Transecto
  []
 
-[64]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.pdf, id=580, 784.9325pt 
+[66]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.pdf, id=588, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.
-pdf  used on input line 2175.
+pdf  used on input line 2241.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[65] [66 <./lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.pdf, id=598, 777.90625pt
+[67] [68 <./lineas-de-costa_files/figure-latex/unnamed-chunk-68-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.pdf, id=607, 777.90625pt
  x 470.75874pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.
-pdf  used on input line 2237.
+pdf  used on input line 2303.
 (pdftex.def)             Requested size: 650.44559pt x 393.62448pt.
-[67] [68 <./lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.pdf, id=618, 777.90625pt
+[69] [70 <./lineas-de-costa_files/figure-latex/unnamed-chunk-70-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.pdf, id=626, 777.90625pt
  x 486.81876pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.
-pdf  used on input line 2262.
+pdf  used on input line 2339.
 (pdftex.def)             Requested size: 650.44559pt x 407.05304pt.
-[69]
-Overfull \vbox (0.46475pt too high) detected at line 2289
+[71]
+Overfull \vbox (0.46475pt too high) detected at line 2366
  []
 
-[70 <./lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.pdf, id=636, 774.895pt x
+[72 <./lineas-de-costa_files/figure-latex/unnamed-chunk-71-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.pdf, id=644, 774.895pt x
  435.6275pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.
-pdf  used on input line 2291.
+pdf  used on input line 2368.
 (pdftex.def)             Requested size: 650.43442pt x 365.65872pt.
-[71] [72 <./lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.pdf>]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.pdf, id=653, 784.9325pt 
+[73] [74 <./lineas-de-costa_files/figure-latex/unnamed-chunk-72-1.pdf>]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.pdf, id=662, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.
-pdf  used on input line 2330.
+pdf  used on input line 2407.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[73] [74 <./lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.pdf>] [75] [7
-6]
-<lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.pdf, id=680, 784.9325pt 
+[75] [76 <./lineas-de-costa_files/figure-latex/unnamed-chunk-74-1.pdf>] [77] [7
+8]
+<lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.pdf, id=688, 784.9325pt 
 x 565.11125pt>
 File: lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.pdf Graphic file (t
 ype pdf)
 <use lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.pdf>
 Package pdftex.def Info: lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.
-pdf  used on input line 2484.
+pdf  used on input line 2561.
 (pdftex.def)             Requested size: 650.47575pt x 468.30927pt.
-[77] [78 <./lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2505.
-[79]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2505.
+[79] [80 <./lineas-de-costa_files/figure-latex/unnamed-chunk-79-1.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2582.
+[81]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2582.
 (./lineas-de-costa.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2505.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2505.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2582.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2582.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15300 strings out of 481239
- 230717 string characters out of 5920378
+ 15302 strings out of 481239
+ 230731 string characters out of 5920378
  544718 words of memory out of 5000000
  30094 multiletter control sequences out of 15000+600000
  585214 words of font info for 84 fonts, out of 8000000 for 9000
@@ -1235,10 +1240,10 @@ m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtko10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on lineas-de-costa.pdf (79 pages, 12498741 bytes).
+Output written on lineas-de-costa.pdf (81 pages, 12501814 bytes).
 PDF statistics:
- 815 PDF objects out of 1000 (max. 8388607)
- 599 compressed objects within 6 object streams
- 120 named destinations out of 1000 (max. 500000)
+ 825 PDF objects out of 1000 (max. 8388607)
+ 606 compressed objects within 7 object streams
+ 122 named destinations out of 1000 (max. 500000)
  12568 words of extra memory for PDF output out of 14400 (max. 10000000)
 

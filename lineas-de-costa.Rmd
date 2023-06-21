@@ -175,6 +175,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == mi
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 200, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pre_2009_tramo_este.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
@@ -334,6 +335,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == mi
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 500, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pre_2009_tramo_oeste.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
@@ -540,6 +542,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == mi
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 100, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pos_2013_tramo_palenque_este.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
@@ -697,6 +700,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == mi
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 100, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pos_2013_tramo_palenque_centro.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
@@ -854,6 +858,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == mi
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 200, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pos_2013_tramo_palenque_oeste.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
@@ -1011,6 +1016,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == "2
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 400, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pos_2013_tramo_nizao_este.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
@@ -1174,6 +1180,7 @@ linea_ref <- lineas %>% filter(longitud > umbral_longitud) %>% filter(date == "2
 
 # Crear transectos
 transectos <- create_transect(x = linea_ref, 50, reverse = T) %>% rename(transect=coastr_id)
+st_write(transectos, 'transectos/pos_2013_tramo_nizao_oeste.gpkg')
 
 # Mapa
 mapa_lineas + geom_sf(data = transectos, color = 'blue')
