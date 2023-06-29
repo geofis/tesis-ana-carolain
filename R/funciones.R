@@ -72,3 +72,23 @@ crear_grafico <- function(muestra, phi=T) {
   axis(1, at=att, labels =Xaxis_label, lty=2,las=2)
   grid(col = 'grey70')
 }
+
+# Perfiles de elevacion
+
+miTopoProfile <- function(DEM, topoPaths, pts = 100){
+  library(raster)
+  library(sp)
+  if (is.list(topoPaths)) 
+    topoPaths <- topoPaths[[2]]
+  elevations <- list()
+  pathDists <- list()
+  pathElevDF <- list()
+  pathLength <- SpatialLinesLengths(topoPaths, longlat = TRUE)
+  for (i in 1:length(topoPaths)) {
+    samplePts <- spsample(topoPaths[i], n = pts, type = "regular")
+    elevations[[i]] <- raster::extract(DEM, samplePts)
+    pathDists[[i]] <- seq(0, pathLength[i], by = pathLength[i]/(pts - 1))
+    pathElevDF[[i]] <- data.frame(`Distance` = pathDists[[i]], `Elevation` = elevations[[i]])
+  }
+  return(pathElevDF)
+}
