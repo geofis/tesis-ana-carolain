@@ -1,0 +1,67 @@
+---
+title: "Pefiles de elevación"
+author: "Ana Valera, Carolain Pérez, Yulisa Arias, José Martínez (tali)"
+date: '2023-02-16'
+output:
+  pdf_document
+  # github_document
+editor_options: 
+  chunk_output_type: console
+  keep_tex: true
+  pandoc_args: ["--pdf-engine=xelatex"]
+header-includes:
+  - \usepackage{geometry}
+  - \geometry{landscape=true, margin=1in}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = F, message = F, warning = F, fig.width = 11, fig.height = 8)
+```
+
+# Perfiles de elevación
+
+## Cargar paquetes y funciones
+
+
+```{r}
+library(raster)
+library(tidyverse)
+library(sf)
+library(RColorBrewer)
+library(topoDistance)
+library(kableExtra)
+options(knitr.kable.NA = '')
+my_kable_style <- function(df, caption = '', full_width = T) {
+  df %>% kable(format = 'latex', escape = F, booktabs = T,
+               digits = 2, caption = caption) %>%
+    kable_styling(bootstrap_options = c("hover", "condensed"),
+                  latex_options = "HOLD_position",
+                  full_width = full_width, position = "center")
+}
+```
+
+Datos
+
+```{r}
+transectos <- st_read('transectos-perfiles-de-elevacion/transectos-perfiles-elevacion.gpkg')
+dsm <- raster('transectos-perfiles-de-elevacion/dsm_hires.tif')
+```
+
+Algunas pruebas:
+
+```{r}
+topoProfile(dsm, transectos %>% as_Spatial() %>% as('SpatialLines'))
+topoProfile(dsm, transectos[1:6,] %>% as_Spatial() %>% as('SpatialLines'), type = 'plotly')
+```
+
+
+
+## Referencias
+
+GBIF.org (2023). *What is GBIF?* Retrieved from
+<https://www.gbif.org/what-is-gbif>
+
+H3 (2022). *Introduction \| H3*. Retrieved from
+<https://h3geo.org/docs>
+
+José Ramón Martínez-Batlle (2022). Estadística zonal multipropósito sobre información geoespacial de República Dominicana, usando Google Earth Engine, Python y R. Versión "Let there be environmental variables (v0.0.0.9000)". Zenodo <https://doi.org/10.5281/zenodo.7367256>
