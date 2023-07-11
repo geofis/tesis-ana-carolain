@@ -75,9 +75,10 @@ crear_grafico <- function(muestra, phi=T) {
 
 # Perfiles de elevacion
 
-miTopoProfile <- function(DEM, topoPaths, pts = 100){
+miTopoProfile <- function(DEM, topoPaths, pts = 100, rescale = T){
   library(raster)
   library(sp)
+  library(scales)
   if (is.list(topoPaths)) 
     topoPaths <- topoPaths[[2]]
   elevations <- list()
@@ -87,7 +88,9 @@ miTopoProfile <- function(DEM, topoPaths, pts = 100){
   for (i in 1:length(topoPaths)) {
     samplePts <- spsample(topoPaths[i], n = pts, type = "regular")
     elevations[[i]] <- raster::extract(DEM, samplePts)
+    if(rescale) elevations[[i]] <- scales::rescale(elevations[[i]])
     pathDists[[i]] <- seq(0, pathLength[i], by = pathLength[i]/(pts - 1))
+    if(rescale) pathDists[[i]] <- scales::rescale(pathDists[[i]])
     pathElevDF[[i]] <- data.frame(`Distance` = pathDists[[i]], `Elevation` = elevations[[i]])
   }
   return(pathElevDF)

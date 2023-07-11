@@ -38,30 +38,72 @@ my_kable_style <- function(df, caption = '', full_width = T) {
                   latex_options = "HOLD_position",
                   full_width = full_width, position = "center")
 }
+source('R/funciones.R')
 ```
 
 Datos
 
 ```{r}
-transectos <- st_read('transectos-perfiles-de-elevacion/transectos-perfiles-elevacion.gpkg')
+transectos <- st_read('transectos-perfiles-de-elevacion/transectos-perfiles-elevacion.gpkg') %>% 
+  arrange(nombre, ID)
 dsm <- raster('transectos-perfiles-de-elevacion/dsm_hires.tif')
 ```
 
 Algunas pruebas:
 
 ```{r}
-topoProfile(dsm, transectos %>% as_Spatial() %>% as('SpatialLines'))
-topoProfile(dsm, transectos[1:6,] %>% as_Spatial() %>% as('SpatialLines'), type = 'plotly')
+# topoProfile(dsm, transectos %>% as_Spatial() %>% as('SpatialLines'))
+# topoProfile(dsm, transectos[1:6,] %>% as_Spatial() %>% as('SpatialLines'), type = 'plotly')
+```
+
+```{r mapadetransectos, echo=F, out.extra='clip', fig.cap='Mapa de localización de transectos para perfiles de playa'}
+knitr::include_graphics("mapa-de-transectos-perfiles-de-elevacion.jpg", dpi = 250)
 ```
 
 
+```{r, fig.width=16, dpi=72, fig.cap='Perfiles de playa por sectores, desagregados'}
+lista_datos <- miTopoProfile(dsm, transectos %>% as_Spatial() %>% as('SpatialLines')) %>% 
+  setNames(paste(transectos$nombre, transectos$ID, sep = '-'))
+tabla_datos <- plyr::ldply(lista_datos, .id = 'sector_ID') %>% 
+  mutate(Sector = gsub('(.*)-(.)*', '\\1', sector_ID),
+         ID = as.numeric(gsub('(.*)-(.*)', '\\2', sector_ID))) %>% 
+  mutate(ID = factor(ID, levels = sort(unique(ID)))) %>% 
+  rename(`Distancia (adimensional)` = Distance, `Elevación (adimensional)` = Elevation)
+tabla_datos %>%
+  ggplot() +
+  aes(x = `Distancia (adimensional)`, y = `Elevación (adimensional)`) +
+  geom_line(alpha = 0.5, color = 'grey50') +
+  geom_smooth(se = F, color = 'black') + 
+  scale_x_continuous(breaks = c(0,0.5,1), labels = c(0,0.5,1), limits = c(0, 1)) +
+  scale_y_continuous(breaks = c(0,0.5,1), labels = c(0,0.5,1), limits = c(0, 1)) +
+  theme(
+    legend.position = "none",
+    text = element_text(size = 12),
+    panel.background = element_rect(fill = 'white', colour = NA),
+    panel.grid.major.y = element_line(colour = "grey", linetype = "dashed", size = 0.25),
+    strip.background = element_rect(colour = "grey90", fill = "grey90"),
+    panel.border = element_rect(color = NA, fill = NA, size = 1),
+    strip.text = element_text(colour = "black", size = 10)
+    ) +
+  facet_wrap( ~ sector_ID, ncol = 9)
+```
 
-## Referencias
 
-GBIF.org (2023). *What is GBIF?* Retrieved from
-<https://www.gbif.org/what-is-gbif>
-
-H3 (2022). *Introduction \| H3*. Retrieved from
-<https://h3geo.org/docs>
-
-José Ramón Martínez-Batlle (2022). Estadística zonal multipropósito sobre información geoespacial de República Dominicana, usando Google Earth Engine, Python y R. Versión "Let there be environmental variables (v0.0.0.9000)". Zenodo <https://doi.org/10.5281/zenodo.7367256>
+```{r, fig.width=16, dpi=72, fig.cap='Perfiles de playa por sectores, combinados'}
+tabla_datos %>%
+  ggplot() +
+  aes(x = `Distancia (adimensional)`, y = `Elevación (adimensional)`, group = ID, color = ID) +
+  geom_line(alpha = 0.5, color = 'grey50') +
+  geom_smooth(se = F) + 
+  scale_x_continuous(breaks = c(0,0.5,1), labels = c(0,0.5,1), limits = c(0, 1)) +
+  scale_y_continuous(breaks = c(0,0.5,1), labels = c(0,0.5,1), limits = c(0, 1)) +
+  theme(
+    text = element_text(size = 14),
+    panel.background = element_rect(fill = 'white', colour = NA),
+    panel.grid.major.y = element_line(colour = "grey", linetype = "dashed", size = 0.25),
+    strip.background = element_rect(colour = "grey90", fill = "grey90"),
+    panel.border = element_rect(color = NA, fill = NA, size = 1),
+    strip.text = element_text(colour = "black", size = 12)
+    ) +
+  facet_wrap( ~Sector)
+```
